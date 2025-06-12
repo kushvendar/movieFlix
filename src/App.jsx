@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import Search from './components/Search'
 import Loader from './components/Loader'
+import Moviecard from './components/Moviecard'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3'
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY
@@ -75,7 +76,7 @@ const App = () => {
           errorMessage ? (<p className='text-red-500'>{errorMessage}</p>):
           (<ul>
             {movieList.map((movie)=>(
-            <p key={movie.id} className='text-white'>{movie.title}</p>
+            <Moviecard key={movie.id} movie={movie}/>
           ))}
           </ul>)
           }
