@@ -1,5 +1,6 @@
 import React from 'react'
 
+'1:34'
 
 const Moviecard = ({movie:{title, backdrop_path, release_date, poster_path, overview, vote_average, original_language }}) => {
   return (
