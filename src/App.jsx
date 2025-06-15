@@ -17,7 +17,7 @@ const API_KEY = import.meta.env.VITE_TMDB_API_KEY
   }
 };
 
-// 1:23:00
+// 1:43:00
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('')
