@@ -5,6 +5,7 @@ import Search from './components/Search'
 import Loader from './components/Loader'
 import Moviecard from './components/Moviecard'
 import { useDebounce } from 'react-use'
+import { updateSearchCount } from './appwrite'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3'
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY
@@ -50,7 +51,6 @@ const App = () => {
         return
       }
       setMovieList(data.results || [] )
-
 
     } catch (error) {
       console.log(`error code : ${error}`)
