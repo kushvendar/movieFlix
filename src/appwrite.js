@@ -17,7 +17,7 @@ const database = new Databases(client)
 export const updateSearchCount = async()=>{
 
     try {
-        const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID,searchTerm)
+        const result = await database.listDocuments(DATABASE_ID,COLLECTION_ID,[Query.equal('searchTerm',searchTerm)])
     } catch (error) {
         
     }
