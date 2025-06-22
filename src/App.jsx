@@ -68,6 +68,7 @@ const App = () => {
       try {
         const data = await getTrendingMovie()
         setTrendingList(data)
+        console.log(trendingList)
       } catch (error) {
         console.log(`Error fetching trending movies ${error}`)
       }
@@ -89,6 +90,7 @@ const App = () => {
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}
         />
         {/* conditional rendering of trending page */}
+      
          {trendingList.length>0 && 
           <section className='trending'>
           <h2>Trending Movies</h2>
@@ -99,9 +101,10 @@ const App = () => {
               <img src={movie.poster_url} alt={movie.title} />
             </li>
           ))}
+
           </ul>
           </section>
-         } 
+         }   
         <section className='all-movies'>
           <h2 className='mt-[40px]'>All Movies</h2>
 
