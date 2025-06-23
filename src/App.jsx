@@ -46,7 +46,6 @@ const App = () => {
       }
 
       const data = await response.json()
-      // console.log(data)
 
       if(data.response===false){
         setErrorMessage(data.Error || 'Failed to fetch movies')
@@ -55,8 +54,6 @@ const App = () => {
       }
       setMovieList(data.results || [] )
 
-      // console.log(data.results[0].poster_path)
-      console.log(`https://image.tmdb.org/t/p/w500/${data.results[0].poster_path}`)
 
       updateSearchCount(query,data.results[0])
 
