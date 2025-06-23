@@ -55,6 +55,9 @@ const App = () => {
       }
       setMovieList(data.results || [] )
 
+      // console.log(data.results[0].poster_path)
+      console.log(`https://image.tmdb.org/t/p/w500/${data.results[0].poster_path}`)
+
       updateSearchCount(query,data.results[0])
 
     } catch (error) {
@@ -68,7 +71,9 @@ const App = () => {
       try {
         const data = await getTrendingMovie()
         setTrendingList(data)
-        console.log(trendingList)
+
+        console.log(data[0].poster_url)
+
       } catch (error) {
         console.log(`Error fetching trending movies ${error}`)
       }
@@ -93,7 +98,7 @@ const App = () => {
       
          {trendingList.length>0 && 
           <section className='trending'>
-          <h2>Trending Movies</h2>
+          <h2 >Trending Movies</h2>
           <ul>
             {trendingList.map((movie,index)=>(
             <li key={movie.$id}>
